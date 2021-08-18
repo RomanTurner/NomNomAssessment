@@ -18,9 +18,18 @@ import { Typography } from '@material-ui/core';
   
 const useStyles = makeStyles({
     root: {
-        flexGrow: 1,
+        display: 'flex',
         padding: '10px',
-  },
+        alignItems: 'center',
+    },
+    loading: {
+        padding: '20px',
+        height: '500px',
+    },
+    info: {
+        paddingTop: '20px',
+        paddingBottom: '10px'
+    },
 });
 
 export default function PageContainer() {
@@ -80,14 +89,17 @@ export default function PageContainer() {
                             setFood={setNomNomFood} />
                     </Grid>
                     <Grid container item xs={12} spacing={2}>
-                        { (!competitorFood  && !nomNomFood) ?
-                            <Grid item xs={12}>
-                                <Typography
-                                    variant="p"
-                                    component="p"
-                                > Select A Brand to Compare
-                                </Typography>
-                            </Grid>
+                        {(!competitorFood && !nomNomFood) ?
+                            <div className={classes.loading}>
+                                <Grid item xs={12}>
+                                    <Typography
+                                     variant="h4"
+                                      component="p"
+                                  > Select A Brand to Compare
+                                   </Typography>
+                                </Grid>
+                            </div>
+                            
                             : (
                       <>
                         <Grid item xs={12}>
@@ -102,12 +114,16 @@ export default function PageContainer() {
                       </>
                       )}
                     </Grid>
-                    <Grid item>
-                        <NutrientInfoCard/>         
-                    </Grid>
-                    <Grid item >
-                        <CallToAction/>
-                    </Grid>
+                    <div className={classes.info}>
+                        <Grid item>
+                            <NutrientInfoCard/>         
+                        </Grid>
+                    </div>
+                    <div className={classes.info}>
+                        <Grid item >
+                            <CallToAction/>
+                        </Grid>
+                   </div>
                 </Grid>
             </Grid>
         </div>

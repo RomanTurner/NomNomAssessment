@@ -15,7 +15,7 @@ export default function CallToAction() {
             <Button
                 variant="outlined"
                 color="primary"
-                href="#outlined-buttons">
+                href="https://www.nomnomnow.com/profile">
               Let's get started
             </Button>
         </Grid>
