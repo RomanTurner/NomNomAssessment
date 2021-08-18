@@ -103,7 +103,8 @@ export default function PageContainer() {
                             : (
                       <>
                         <Grid item xs={12}>
-                            <Typography>{competitorFood.tagline}</Typography>
+                            <Typography variant="p"
+                                      component="p" >{competitorFood.tagLine}</Typography>
                         </Grid>
                         <Grid item align='right' xs={6}>
                             <FoodCompare {...competitorFood }/>
